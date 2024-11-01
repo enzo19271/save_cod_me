@@ -1,0 +1,358 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f0f0f0;
+}
+
+.navbar {
+  background-color: #0a285f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.logo h1 {
+  color: #fff;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  display: block;
+}
+
+.menu li a:hover {
+  background-color: #fff;
+  color: #0a285f;
+  border-radius: 5px;
+}
+
+/* Main Container */
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* Card Style */
+.card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Welcome Card */
+.welcome-card {
+  background-color: #ffffff;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+/* Info Cards */
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap; /* Membuat card tetap responsif jika ada banyak card */
+}
+
+.info-card {
+  flex: 1;
+  min-width: 300px; /* Atur lebar minimum */
+  padding: 40px;
+}
+
+.info-card h3 {
+  color: #0a285f;
+  font-size: 24px;
+}
+
+.info-card p {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Styling untuk form Tambah Saldo/Kas */
+.tambah-saldo-card form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.tambah-saldo-card input[type="number"] {
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.tambah-saldo-card button {
+  padding: 10px 20px;
+  background-color: #0a285f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.tambah-saldo-card button:hover {
+  background-color: #003366;
+}
+
+/* Mobile Menu Styling */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+/* Media Query untuk Tampilan Mobile */
+@media screen and (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #0a285f;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .menu li {
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .card-container {
+    flex-direction: column;
+  }
+
+  .info-card {
+    margin-bottom: 20px;
+  }
+
+  /* Menampilkan form tambah saldo secara vertikal */
+  .form-row-horizontal {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Untuk menyesuaikan tombol dan input di perangkat mobile */
+  .btn-simpan {
+    width: 100%;
+  }
+}
+
+/* Styling untuk tabel data saldo */
+.data-saldo-card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.data-saldo-card th,
+.data-saldo-card td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.data-saldo-card th {
+  background-color: #0a285f;
+  color: white;
+}
+
+.data-saldo-card td a {
+  color: #ff4c4c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.data-saldo-card td a:hover {
+  text-decoration: underline;
+}
+
+/* Form Row Style */
+.form-row-horizontal {
+  display: flex;
+  gap: 10px;
+}
+
+/* Styling untuk Input Group */
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-group input,
+.input-group select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; /* Menyesuaikan lebar agar seragam */
+  max-width: 300px; /* Maksimum lebar untuk input dan select */
+}
+
+/* Hover & Focus untuk Input dan Select */
+.input-group input:hover,
+.input-group select:hover,
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #0a285f;
+  box-shadow: 0 0 8px rgba(10, 40, 95, 0.2); /* Menambah efek bayangan */
+  outline: none; /* Menghilangkan border default browser */
+}
+
+/* Styling untuk Select Option */
+.input-group select {
+  appearance: none; /* Menghilangkan tampilan default browser */
+  background-color: white;
+  cursor: pointer;
+  padding-right: 30px; /* Tambahkan ruang untuk dropdown arrow */
+  position: relative;
+}
+
+/* Icon panah dropdown untuk Select */
+.input-group select:after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-top-color: #0a285f;
+  pointer-events: none;
+}
+
+/* Styling untuk tombol simpan */
+/* Media Query untuk Tampilan Desktop */
+@media screen and (min-width: 1024px) {
+  /* Memperpanjang input-group */
+  .input-group input,
+  .input-group select {
+    max-width: 500px; /* Lebar maksimal lebih besar pada desktop */
+  }
+
+  /* Menambah ukuran tombol simpan */
+  .btn-simpan {
+    padding: 15px 30px; /* Ukuran lebih besar untuk desktop */
+    font-size: 18px; /* Ukuran font lebih besar */
+  }
+}
+
+.btn-simpan:hover {
+  background-color: #009933;
+  box-shadow: 0 4px 6px rgba(0, 153, 51, 0.2);
+}
+
+.form-group {
+  width: 100%;
+  max-width: 300px; /* Batas maksimal lebar dropdown */
+  margin: 10px 0;
+}
+
+/* Styling untuk Select Dropdown */
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: #333;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  -webkit-appearance: none; /* Menghilangkan default styling browser (Safari) */
+  -moz-appearance: none; /* Menghilangkan default styling browser (Firefox) */
+  appearance: none; /* Menghilangkan default styling browser lainnya */
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="5"><path fill="none" stroke="%2300023c" stroke-width="1.5" d="M1 1l4 3 4-3"/></svg>'); /* Ikon panah dropdown */
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* Mengatur posisi ikon panah */
+  background-size: 10px; /* Ukuran ikon panah */
+}
+
+/* Hover dan fokus pada select */
+.form-group select:hover,
+.form-group select:focus {
+  border-color: #0a285f;
+  box-shadow: 0 0 8px rgba(10, 40, 95, 0.1); /* Efek shadow halus */
+  outline: none; /* Menghilangkan outline bawaan */
+}
+
+/* Styling untuk Option */
+.form-group option {
+  padding: 10px;
+  background-color: white;
+  color: #333;
+  font-size: 16px;
+}
+
+/* Styling untuk form Tarik Saldo */
+.tambah-saldo-card form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.tambah-saldo-card input[type="date"],
+.tambah-saldo-card select {
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
